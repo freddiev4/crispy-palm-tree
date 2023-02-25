@@ -124,7 +124,7 @@ The `-m` flag lets you include a message to go with the commit.
 
 ## Why do we need to stage changes?
 
-It is good practice to consider every as a *logical unit* of change. If you update 2 files that have independent changes,
+It is good practice to consider every commit as a *logical unit* of change. If you update 2 files that have independent changes,
 it's logical to break up those changes into two commits (or more).
 
 # Viewing our commit
