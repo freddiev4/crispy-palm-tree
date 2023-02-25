@@ -110,14 +110,18 @@ We’re going to use a common mailing analogy to explain the staging area of Git
 When you’re working with files in git, you add content to the staging area:
 
 ```console
-$ git add colors.txt numbers.txt (putting a jacket, that you want to mail, in a box)
+$ git add colors.txt numbers.txt
 ```
+
+This is analogous to putting a jacket, that you want to mail, in a box.
 
 You then record the changes into the git index using git commit:
 
 ```
-$ git commit -m "Add a colors file and a numbers file" (sealing the box, adding a shipping label)
+$ git commit -m "Add a colors file and a numbers file"
 ```
+
+This is analogous to sealing the box and adding a shipping label.
 
 The `-m` flag lets you include a message to go with the commit.
 
@@ -182,7 +186,7 @@ We’ve covered how to take a snapshot of files. We’re now going to make chang
 This can often one of the more difficult parts of using git, especially as the number of files and number of changes increases, but also being able to undo a set of changes can be one of the biggest benefits.
 
 
-Continuing... open up `colors.txt` and type in a color you like. Save the file. We’re going to see what we changed:
+Continuing... open up `colors.txt` with your favorite text editor / IDE and type in a color you like. Save the file. We’re going to see what we changed:
 
 ```console
 $ git diff
