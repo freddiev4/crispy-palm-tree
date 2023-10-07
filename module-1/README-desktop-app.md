@@ -4,6 +4,8 @@
 
 ![image of the GitHub Desktop app](github-desktop-get-started.png)
 
+Click `Sign in with GitHub`
+
 
 # Initializing a repository
 
@@ -73,33 +75,7 @@ The log shows all commits listed from most recent at the top, to least recent at
 Things that you’ll see here are the name of the author, the email, the date, a random-looking (but not actually random) string known as the commit SHA or commit hash, and the message that is associated with the commit
 
 
-# Showing the files
-
-One important thing that the log didn’t show us was the files we committed. To see them, we can run:
-
-```console
-git show
-
-commit a2a769b573ecba7a9099530db39c627c7ef347b0 (HEAD -> master)
-Author: Freddie Vargus <fjv41995@gmail.com>
-Date:   Tue Jan 24 23:43:45 2023 -0500
-
-	Add a colors file and a numbers file
-
-diff --git a/colors.txt b/colors.txt
-new file mode 100644
-index 0000000..e69de29
-diff --git a/numbers.txt b/numbers.txt
-new file mode 100644
-index 0000000..e69de29
-```
-
-- `diff --git a/colors.txt b/colors.txt`: This line shows the file being compared. `a` and `b` are different versions of the same file. Since the files are empty, there are no changes to show between versions.
-- `new file mode 100644`: This says that we added a new file, and `100644` means that it's a regular file.
-- `index 0000000..e69de29`: This line shows the hashes being compared.
-
 # More changes, undoing, fixing mistakes
-
 
 We’ve covered how to take a snapshot of files. We’re now going to make changes those files, and we’re going to purposefully commit mistakes and try to fix them.
 
@@ -109,19 +85,10 @@ This can often one of the more difficult parts of using git, especially as the n
 
 Continuing... open up `colors.txt` with your favorite text editor / IDE and type in a color you like. Save the file. We’re going to see what we changed:
 
-```console
-git diff
+- Anything in red (nothing currently) will show us things that we removed from the file
+- Anything in green will show us things that we added to the file.
 
-diff --git a/colors.txt b/colors.txt
-index e69de29..08ec89e 100644
---- a/colors.txt
-+++ b/colors.txt
-@@ -0,0 +1 @@
-+purple
-```
-
-- Anything between the line that has --- will show us things that we removed from the file, in red (nothing currently).
-- Anything after the line that has +++ will show us things that we added to the file, in green.
+![add colors](add-color.png)
 
 Add a new file called `food.txt`:
 
@@ -129,39 +96,20 @@ Add a new file called `food.txt`:
 touch food.txt
 ```
 
-You should now have two sets of changes that are unstaged.
+You should now have two sets of changes that are in the staging area. Uncheck both boxes.
 
 
 # Add and commit again
 
-Add your independent changes and commit them
+Add your changes independently. Check one box, then commit that file.
 
-```console
-git add food.txt
-git commit -m "Add food file"
-
-git add colors.txt (you can run git status after if you want to check that this file is staged)
-git commit -m "Add my favorite color"
-git log
-```
+Then check the other box, and commit *that* file.
 
 Now let’s say you put the wrong color, or you wanted to commit something different from what you had written. How do we undo the commit?
 
-```console
-git reset HEAD~
-
-Unstaged changes after reset:
-M        colors.txt
-```
-
-Now take a look at your git log again:
-
-```console
-git log
-```
-
-What do you notice about it? What happens when you run git status?
+Check your `History` tab. Right click the commit where you updated `colors.txt`, and click `Undo Commit`.
 
 
+![undo commit](undo-commit.png)
 
-
+What happened to the file? What happened to your git history?

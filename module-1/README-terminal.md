@@ -36,9 +36,18 @@ A repository contains all of your project's files and each file's revision histo
 Let’s run the following commands:
 
 ```console
-mkdir mygitrepo <-- creates a new directory (folder) for our repository
-cd mygitrepo    <-- changes our current working directory to mygitrepo
-git init        <-- initializes the directory as a git repository
+# creates a new directory (folder) for our repository
+mkdir mygitrepo
+```
+
+```console
+# changes our current working directory to mygitrepo
+cd mygitrepo
+```
+
+```console
+# initializes the directory as a git repository
+git init
 ```
 
 
