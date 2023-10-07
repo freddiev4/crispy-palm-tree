@@ -3,11 +3,11 @@
 Create new SSH keys for GitHub for secure access and repository writes
 
 ```console
-$ ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # OR, if your machine doesn’t support ed25519
 
-$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
 Press `Enter` to accept the default file location. When asked, type a secure passphrase (or leave it empty).
@@ -22,17 +22,17 @@ Press `Enter` to accept the default file location. When asked, type a secure pas
 Start the ssh-agent
 
 ```console
-$ eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)"
 ```
 
 Add the ssh key to the agent
 
 ```console
-$ ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/id_ed25519
 
 # OR, if you used rsa in the ssh-keygen step
 
-$ ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa
 ```
 
 # Setup Part 2 (on your GitHub account)
@@ -40,7 +40,7 @@ $ ssh-add ~/.ssh/id_rsa
 Add your public SSH key (ends in .pub) from the file to your clipboard from your terminal
 
 ```console
-$ pbcopy < ~/.ssh/id_ed25519.pub <-- if this doesn’t work, then open the file in a text editor and copy it
+pbcopy < ~/.ssh/id_ed25519.pub <-- if this doesn’t work, then open the file in a text editor and copy it
 ```
 
 Go to github.com/settings, click `SSH and GPG keys`, and then click `New SSH key`.
@@ -68,10 +68,10 @@ Hi freddiev4! You've successfully authenticated, but GitHub does not provide she
 From your command line, run:
 
 ```console
-$ cd							     <-- to bring you back to the root of your file system
-$ git clone git@github.com:yourusername/silver-carnival.git  <-- to get a local copy of the repository
-$ cd silver-carnival 					     <-- to make this your active working directory
-$ git status 					      	     <-- to ensure you’re in the right place (main branch)
+cd							     <-- to bring you back to the root of your file system
+git clone git@github.com:yourusername/silver-carnival.git  <-- to get a local copy of the repository
+cd silver-carnival 					     <-- to make this your active working directory
+git status 					      	     <-- to ensure you’re in the right place (main branch)
 ```
 
 # Make changes to the fork
@@ -79,10 +79,10 @@ $ git status 					      	     <-- to ensure you’re in the right place (main br
 Using some familiar commands…
 
 ```
-$ git checkout -b yourusername/feature
-$ touch yourusername.txt
-$ git add yourusername.txt
-$ git commit -m "Add my username to the repo"
+git checkout -b yourusername/feature
+touch yourusername.txt
+git add yourusername.txt
+git commit -m "Add my username to the repo"
 ```
 
 # Push your changes
@@ -90,7 +90,7 @@ $ git commit -m "Add my username to the repo"
 Run:
 
 ```console
-$ git push -u origin HEAD
+git push -u origin HEAD
 ```
 
 - `-u` is a shortcut for --set-upstream-to, which tells Git where send the changes

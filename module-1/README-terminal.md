@@ -4,10 +4,10 @@
 
 If you haven’t done so already, install git (search for “install git” and follow the instructions on git-scm.com). Open your terminal / git bash.
 
-Ensure that you have git installed by typing the following command into your terminal (excluding the $):
+Ensure that you have git installed by typing the following command into your terminal:
 
 ```console
-$ git --version
+git --version
 
 # you should see something like the text below
 git version 2.24.3
@@ -16,15 +16,15 @@ git version 2.24.3
 Next, configure your name and email address by running:
 
 ```console
-$ git config --global user.name "Your Name"
-$ git config --global user.email your-email@example.com
+git config --global user.name "Your Name"
+git config --global user.email your-email@example.com
 ```
 
 
 Optionally, set your favorite editor
 
 ```console
-$ git config --global core.editor code (emacs, vi, etc)
+git config --global core.editor code (emacs, vi, etc)
 ```
 
 
@@ -36,21 +36,21 @@ A repository contains all of your project's files and each file's revision histo
 Let’s run the following commands:
 
 ```console
-$ mkdir mygitrepo <-- creates a new directory (folder) for our repository
-$ cd mygitrepo    <-- changes our current working directory to mygitrepo
-$ git init        <-- initializes the directory as a git repository
+mkdir mygitrepo <-- creates a new directory (folder) for our repository
+cd mygitrepo    <-- changes our current working directory to mygitrepo
+git init        <-- initializes the directory as a git repository
 ```
 
 
 # .git
 
-Once a repository has been initialized, it will have a hidden directory called .git. This is where all of our version history ends up being stored.
+Once a repository has been initialized, it will have a hidden directory called `.git`. This is where all of our version history ends up being stored.
 
 Want to confirm it’s there? Run:
 
 ```console
-$ ls -a       <-- shows all directories including hidden directories
-$ ls -a .git  <-- shows the contents of the .git directory
+ls -a       <-- shows all directories including hidden directories
+ls -a .git  <-- shows the contents of the .git directory
 ```
 
 
@@ -59,13 +59,13 @@ $ ls -a .git  <-- shows the contents of the .git directory
 We’re going to add some files.
 
 ```console
-$ touch colors.txt numbers.txt
+touch colors.txt numbers.txt
 ```
 
 Git should pick up these files. To check, run:
 
 ```console
-$ git status
+git status
 
 On branch master
 
@@ -84,7 +84,7 @@ You should see output similar to the above (the output might also say `On branch
 
 
 ```console
-$ git status
+git status
 
 On branch master  ← The current branch we’re working on.
    	  	    A branch is a movable pointer to a series of commits.
@@ -110,7 +110,7 @@ We’re going to use a common mailing analogy to explain the staging area of Git
 When you’re working with files in git, you add content to the staging area:
 
 ```console
-$ git add colors.txt numbers.txt
+git add colors.txt numbers.txt
 ```
 
 This is analogous to putting a jacket, that you want to mail, in a box.
@@ -118,7 +118,7 @@ This is analogous to putting a jacket, that you want to mail, in a box.
 You then record the changes into the git index using git commit:
 
 ```
-$ git commit -m "Add a colors file and a numbers file"
+git commit -m "Add a colors file and a numbers file"
 ```
 
 This is analogous to sealing the box and adding a shipping label.
@@ -136,7 +136,7 @@ it's logical to break up those changes into two commits (or more).
 Now that we’ve committed our files, let’s see the commit in our log:
 
 ```console
-$ git log
+git log
 
 commit a2a769b573ecba7a9099530db39c627c7ef347b0 (HEAD -> master)
 Author: Freddie Vargus <fjv41995@gmail.com>
@@ -157,7 +157,7 @@ Things that you’ll see here are the name of the author, the email, the date, a
 One important thing that the log didn’t show us was the files we committed. To see them, we can run:
 
 ```console
-$ git show
+git show
 
 commit a2a769b573ecba7a9099530db39c627c7ef347b0 (HEAD -> master)
 Author: Freddie Vargus <fjv41995@gmail.com>
@@ -189,7 +189,7 @@ This can often one of the more difficult parts of using git, especially as the n
 Continuing... open up `colors.txt` with your favorite text editor / IDE and type in a color you like. Save the file. We’re going to see what we changed:
 
 ```console
-$ git diff
+git diff
 
 diff --git a/colors.txt b/colors.txt
 index e69de29..08ec89e 100644
@@ -205,7 +205,7 @@ index e69de29..08ec89e 100644
 Add a new file called `food.txt`:
 
 ```console
-$ touch food.txt
+touch food.txt
 ```
 
 You should now have two sets of changes that are unstaged.
@@ -216,18 +216,18 @@ You should now have two sets of changes that are unstaged.
 Add your independent changes and commit them
 
 ```console
-$ git add food.txt
-$ git commit -m "Add food file"
+git add food.txt
+git commit -m "Add food file"
 
-$ git add colors.txt (you can run git status after if you want to check that this file is staged)
-$ git commit -m "Add my favorite color"
-$ git log
+git add colors.txt (you can run git status after if you want to check that this file is staged)
+git commit -m "Add my favorite color"
+git log
 ```
 
 Now let’s say you put the wrong color, or you wanted to commit something different from what you had written. How do we undo the commit?
 
 ```console
-$ git reset HEAD~
+git reset HEAD~
 
 Unstaged changes after reset:
 M        colors.txt
@@ -236,7 +236,7 @@ M        colors.txt
 Now take a look at your git log again:
 
 ```console
-$ git log
+git log
 ```
 
 What do you notice about it? What happens when you run git status?
