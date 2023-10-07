@@ -65,47 +65,36 @@ Hi freddiev4! You've successfully authenticated, but GitHub does not provide she
 
 # git clone your fork
 
-From your command line, run:
+From your GitHub Desktop app, click the top left `Current repository` dropdown, then click `Add` and `Clone repository`:
 
-```console
-cd							     <-- to bring you back to the root of your file system
-git clone git@github.com:yourusername/silver-carnival.git  <-- to get a local copy of the repository
-cd silver-carnival 					     <-- to make this your active working directory
-git status 					      	     <-- to ensure you’re in the right place (main branch)
-```
+![clone a repo](clone-repo.png)
+
+Find the name of your repository `yourusername/silver-carnival`, click it, and then click clone.
+
+
+# Make a branch
+
+Click the `current branch` dropdown, then click `New branch`.
+
+![new branch](new-branch.png)
+
+Give your branch a name and click `Create branch`.
 
 # Make changes to the fork
 
-Using some familiar commands…
+Using some familiar commands (check the actions from module 1), add a `.txt` file with your username: `yourusername.txt`
 
-```
-git checkout -b yourusername/feature
-touch yourusername.txt
-git add yourusername.txt
-git commit -m "Add my username to the repo"
-```
+And commit the file.
+
 
 # Push your changes
 
-Run:
-
-```console
-git push -u origin HEAD
-```
-
-- `-u` is a shortcut for --set-upstream-to, which tells Git where send the changes
-- `origin` is the default name for the remote repository, and is set to the URL of the repository
-- `HEAD` is the name of the current (latest) commit on your branch
-
-If that command fails, look at the output and follow what git tells you to do.
+Click on the `Repository` tab in top menu bar, and click `Push`.
 
 # See your changes on GitHub
 
-Go to github.com/yourusername/silver-carnival, click the branch dropdown, and then your branch name to see your changes
+Go to `github.com/yourusername/silver-carnival`, click the `branch` dropdown, and then your branch name to see your changes
 
 ![viewing branches](viewingbranches.png)
 
 And we'll continue back to the main workshop.
-
-
-	   
