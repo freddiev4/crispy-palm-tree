@@ -9,12 +9,12 @@
 
 A repository contains all of your project's files and each file's revision history. We’re going to create a new repository with GitHub Desktop.
 
-Click on the `Create a new Repository` button
+Click on the `Create a new Repository` button and do the following:
 
-![image of the new repo creation](create-new-repo.png)
-
-
-and give your repository a name. Check `Initialize this repository with a README`. You can leave the other fields blank or None. 
+- give your repository a name
+- check `Initialize this repository with a README`. 
+- make note of where the repository will be created (`Local Path`)
+- leave the remaining fields blank or None
 
 ![new repo menu](new-repo-menu.png)
 
@@ -24,98 +24,49 @@ Click `Create repository`.
 
 Once a repository has been initialized, it will have a hidden directory called `.git`. This is where all of our version history ends up being stored.
 
+
+# Open the repo in a code editor
+
+If you made a note of where the repository was created, then open that same folder / project in a code editor (VS Code, Sublime Text, etc).
+
+At this point we'll be switching back and forth between the Editor and the GitHub Desktop app.
+
 # git status
 
-We’re going to add some files.
+We’re going to add some files. In your Editor, add two empty files:
 
-```console
-touch colors.txt numbers.txt
-```
+- colors.txt 
+- numbers.txt
 
-Git should pick up these files. To check, run:
+Git should pick up these files. To check, switch back to the Desktop app. You should see "2 changes files` in the left sidebar.
 
-```console
-git status
-
-On branch master
-
-No commits yet
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-       colors.txt
-
-       numbers.txt
- ```
-
-You should see output similar to the above (the output might also say `On branch main` which is also valid).
-
-# Anatomy of git status
+![new files](new-files.png)
 
 
-```console
-git status
-
-On branch master  ← The current branch we’re working on.
-   	  	    A branch is a movable pointer to a series of commits.
- 
-No commits yet    ← This is saying we have no commits yet.
-   	   	    A commit is the basic unit of version control,
- 		    and is a snapshot of our files at a specific point in time.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-       colors.txt
-       numbers.txt       ← This is saying we have no versions of these files being tracked yet.
-       			   The way we can track these files is by first adding them to the staging area.
-```
-
-
-# Git staging area
+# Committing files
 
 
 We’re going to use a common mailing analogy to explain the staging area of Git.
 
 
-When you’re working with files in git, you add content to the staging area:
+When you’re working with files in git, you add content to the staging area, by checking the boxes next to the file names.
 
-```console
-git add colors.txt numbers.txt
-```
+This is analogous to putting a jacket, that you want to mail, in a box. You then record the changes into the git index using a commit. You do this by adding a summary and then clicking `Commit to main`.
 
-This is analogous to putting a jacket, that you want to mail, in a box.
-
-You then record the changes into the git index using git commit:
-
-```
-git commit -m "Add a colors file and a numbers file"
-```
+![first commit](first-commit.png)
 
 This is analogous to sealing the box and adding a shipping label.
-
-The `-m` flag lets you include a message to go with the commit.
 
 
 ## Why do we need to stage changes?
 
-It is good practice to consider every commit as a *logical unit* of change. If you update 2 files that have independent changes,
-it's logical to break up those changes into two commits (or more).
+It is good practice to consider every commit as a *logical unit* of change. If you update 2 files that have independent changes, it's logical to break up those changes into two commits (or more).
 
 # Viewing our commit
 
-Now that we’ve committed our files, let’s see the commit in our log:
+Now that we’ve committed our files, let’s see the commit in our log, by clicking on the `History` button in the left side bar.
 
-```console
-git log
-
-commit a2a769b573ecba7a9099530db39c627c7ef347b0 (HEAD -> master)
-Author: Freddie Vargus <fjv41995@gmail.com>
-Date:   Tue Jan 24 23:43:45 2023 -0500
-
-	Add a colors file and a numbers file
-```
-
-Your output should look similar to the above.
+![git history](git-history.png)
 
 The log shows all commits listed from most recent at the top, to least recent at the bottom.
 

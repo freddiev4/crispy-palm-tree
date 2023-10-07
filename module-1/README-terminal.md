@@ -53,6 +53,18 @@ ls -a       <-- shows all directories including hidden directories
 ls -a .git  <-- shows the contents of the .git directory
 ```
 
+# Open the repo in a code editor
+
+In your terminal, check where your repository is by running:
+
+```
+pwd
+```
+
+Then open that same directory in a code editor (VS Code, Sublime Text, etc).
+
+At this point we'll be switching back and forth between the Editor and the Terminal.
+
 
 # git status
 
@@ -128,8 +140,7 @@ The `-m` flag lets you include a message to go with the commit.
 
 ## Why do we need to stage changes?
 
-It is good practice to consider every commit as a *logical unit* of change. If you update 2 files that have independent changes,
-it's logical to break up those changes into two commits (or more).
+It is good practice to consider every commit as a *logical unit* of change. If you update 2 files that have independent changes, it's logical to break up those changes into two commits (or more).
 
 # Viewing our commit
 
